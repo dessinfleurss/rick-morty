@@ -1,22 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useCharacter } from "../hooks/useCharacter";
 import "../app.css";
-export function Characters() {
-  const [personajes, setpersonajes] = useState([]);
+
+export const Characters = () => {
+  const { getCharacters, personajes } = useCharacter();
 
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
-      .then((response) => response.json())
-      .then((data) => setpersonajes(data.results));
+    getCharacters();
   }, []);
 
-  return;
-  <ul>
-    {personajes.map((item, index) => (
-      <li key={index}>
-        <h3>{item.name}</h3>
-        <p> {item.status}</p>
-        <img src={item.image} />
-      </li>
-    ))}
-  </ul>;
-}
+  return (
+    <ul>
+      {personajes.map((item, index) => (
+        <li key={index}>
+          <h3>{item.name}</h3>
+          <p> {item.status}</p>
+          <img src={item.image} />
+        </li>
+      ))}
+    </ul>
+  );
+};

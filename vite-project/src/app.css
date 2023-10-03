@@ -1,14 +1,22 @@
 body {
-  background: #36424e;
+  background: #34343b;
   text-align: left;
 }
-
-rick {
-  background: #3e4c5a;
+#rick {
+  background: #484850;
+  color: white;
+  border: 1px solid 484850;
+  width: 60%;
+  padding-left: 20px;
 }
 #titulo {
   background: white;
-  color: #efd2be;
+  color: #424242;
+  text-align: center;
   border: 3px #ffd3b5;
   width: 500x;
+}
+#a {
+  background: white;
+  text-align: right;
 }
